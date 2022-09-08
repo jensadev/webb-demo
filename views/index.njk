@@ -6,7 +6,13 @@
     <p>Detta är dock statisk text. Följt av data från databas.</p>
     <ul>
         {% for row in rows %}
-        <li>{{ row.name }}</li>
+        <li>
+            <div class="d-flex">
+                <h2>Name: {{ row.name }}</h2>
+                <h3>(o)Secret identity: {{ row.secret_identity }}</h3>
+                <p>{{ row.bio }}</p>
+            </div>
+        </li> <!-- visa bio -->
         {% endfor %}
     </ul>
 </main>
