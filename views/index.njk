@@ -4,13 +4,15 @@
     <h1>{{ title }}</h1>
     <p>{{ intro }}</p>
     <p>Detta är dock statisk text. Följt av data från databas.</p>
+    <!--  filters https://mozilla.github.io/nunjucks/templating.html -->
     <ul>
         {% for row in rows %}
         <li>
             <div class="d-flex">
                 <h2>Name: {{ row.name }}</h2>
                 <h3>(o)Secret identity: {{ row.secret_identity }}</h3>
-                <p>{{ row.bio }}</p>
+                <p>{{ row.bio | safe }}</p>
+                <p>{{ row.age }}</p>
             </div>
         </li> <!-- visa bio -->
         {% endfor %}
